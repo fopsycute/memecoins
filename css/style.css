@@ -3244,29 +3244,66 @@ font-family: Space Grotesk;
 .about_part .about_part_text .btn_1 {
   margin-top: 6px;
 }
-.about_part_img{
-
-padding:40px;
-             border: 1px solid; /* Adjust the width as needed */
-            border-image: linear-gradient(to right, #FFE998 100%, #57370D 100%);
-            border-image-slice: 1;
-
+.about_part_img {
+      padding: 40px;
+    border: 6px solid;
+    border-image: linear-gradient(to right, #FFE998 100%, #57370D 100%);
+    border-image-slice: 1;
+ perspective: 1000px;
+  
 }
- .about_part_img img {
-            border: 1px solid; /* Adjust the width as needed */
-            border-image: linear-gradient(to right, #FFE998 100%, #57370D 100%);
-            border-image-slice: 1;
-            display: block; /* Ensures image doesn't have unwanted space around it */
-            max-width: 100%; /* Ensures image is responsive */
-           /* Ensures image aspect ratio is maintained */
-        }
-@media (max-width: 991px) {
-  /* line 132, /Applications/MAMP/htdocs/palash/cl/july 2019/192 Agency/192 Agency html/sass/_about_part.scss */
-  .about_part .about_part_img {
-    margin-top: 0px;
-	          
 
-  }
+.about_part_img img {
+ 
+	max-width: 100%;
+    	display: block;
+   
+}
+
+/* Your image hover effect styles */
+.image {
+   
+    backface-visibility: hidden;
+    transition: transform 0.6s ease-in-out;
+}
+
+.first-image {
+      border: 6px solid;
+    border-image: linear-gradient(to right, #FFE998 100%, #57370D 100%);
+    border-image-slice: 1;   
+
+    transform: rotateY(0deg);
+	
+}
+
+.second-image {
+ position:absolute;
+max-width: 100%;
+border: none;
+border-image: none;
+padding: 40px;
+    top: 0%;
+    left: 0;
+    transform: rotateY(180deg);
+    display: none;
+	
+  
+  
+}
+
+.about_part_img:hover .first-image {
+    transform: rotateY(180deg);
+}
+
+.about_part_img:hover .second-image {
+    display: block;
+    transform: rotateY(360deg);
+}
+
+@media (max-width: 991px) {
+    .about_part .about_part_img {
+        margin-top: 0px;
+    }
 }
 
 /* line 138, /Applications/MAMP/htdocs/palash/cl/july 2019/192 Agency/192 Agency html/sass/_about_part.scss */
